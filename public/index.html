@@ -3,15 +3,249 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
+    <title>daijoubou</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</script>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold text-blue-600">Hello</h1>
-    <p class="m-3">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat aut
-      totam nobis excepturi asperiores corporis voluptas nulla atque eos
-      distinctio?
-    </p>
+  <body class="overflow-x-hidden">
+    <!-- navbar start -->
+<nav class="bg-white w-svw h-auto z-50 sticky top-0">
+  <div class="max-w-screen-xl flex flex-wrap justify-between mx-auto p-4">
+    <a href="#" class="ring-0 flex items-center">
+      <img src="./img/daijoubu.png" class="w-28 scale-125" alt="Daijoubou Logo" />
+    </a>
+    <button
+      data-collapse-toggle="navbar-dropdown"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      aria-controls="navbar-dropdown"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+    </button>
+    <div class="hidden md:relative top-14 md:top-0 bg-blue-300 md:bg-transparent rounded-lg my-auto w-full md:block md:w-auto" id="navbar-dropdown">
+      <ul
+        class="absolute  bg-blue-pallet-50 md:bg-transparent w-[90vw] md:w-auto md:static flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+      >
+        <li>
+          <a
+            href="#beranda"
+            class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 group"
+          >
+            <span
+              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
+            >
+              Beranda
+            </span>
+            <span
+              class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            id="dropdownNavbarLink"
+            data-dropdown-toggle="dropdownNavbar"
+            class="relative flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto group"
+          >
+            <span
+              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
+            >
+              Artikel
+            </span>
+            <svg
+              id="arrowIcon"
+              class="w-2.5 h-2.5 ms-2.5 transition-transform duration-300 ease-in-out"
+              onclick="rotateArrow()"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+            <span
+              class="absolute  bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
+            ></span>
+          </a>
+
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbar"            
+            class="z-[1000] hidden font-normal bg-white  md:bg-blue-pallet-200 divide-y divide-gray-100 rounded-lg shadow w-44"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700"
+              aria-labelledby="dropdownLargeButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 font-montserrat"
+                  >Kesehatan Mental</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 font-montserrat"
+                  >Kesehatan Fisik</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 font-montserrat"
+                  >HKSR</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a
+            href="#ruangCerita"
+            class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 group"
+          >
+            <span
+              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
+            >
+              Ruang Cerita
+            </span>
+            <span
+              class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#tentangKami"
+            class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 group"
+          >
+            <span
+              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
+            >
+              Tentang Kami
+            </span>
+            <span
+              class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
+            ></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="button bg-blue-pallet-600 cursor-pointer rounded-md py-2 hidden md:block hover:shadow-lg hover:shadow-blue-pallet-900/50 transition-all duration-200 hover:scale-105"
+    >
+      <a href="#" class="text-white m-5">Masuk</a>
+    </div>
+  </div>
+</nav>
+<!-- navbar end -->
+    <section id="beranda" class="relative w-svw h-svh mt-0 scroll-mt-20">
+      <img src="img/banner.png" class="absolute -z-10 w-full h-svh object-cover" alt="banner">
+      <div class="container absolute xl:m-[10%] xl:ml-[15%]">
+        <div>
+          <h1 class="text-white text-5xl font-roboto font-bold xl:text-[64px] ml-4 xl:w-[50%] capitalize">Solusi Kesehatan <br> Masa Depan</h1>
+          <p class="text-white xl:text-[20px] ml-4 xl:mt-12 xl:w-[40%] capitalize font-montserrat"><span class="font-bold">Daijoubu</span> hadir dengan teknologi AI canggih untuk memberikan bantuan personal pada kesehatanmu.</p>
+          <button class="bg-blue-pallet-600 p-4 rounded-md mt-12 ml-4 text-white hover:scale-105 transition-all duration-300">Konsultasi sekarang</button>
+        </div>
+        
+      </div>
+    </section>
+    <section class="w-svw h-[600px]">
+      <div class="flex justify-center mt-10 mb-16">
+        <img src="img/sponsor.png" alt="sponsor">
+      </div>
+      <h1 class="justify-center mb-20 text-4xl font-roboto font-bold items-center flex">Penawaran Kami</h1>
+      <div class="flex justify-center gap-20 mt-5">
+      <div class="max-w-64 bg-white">
+        <img src="img/icon/Aicons.png" alt="AI" class="w-16 h-16 mb-10">
+        <a href="#">
+          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Cari solusi <br> dengan AI</h5>
+        </a>
+      <p class="mb-24 font-normal text-gray-500 dark:text-gray-400">Tidak ingin bercerita dengan manusia?</p>
+      </div>
+      <div class="max-w-64 bg-white">
+        <img src="img/icon/Hearticons.png" alt="AI" class="w-16 h-16 mb-10">
+        <a href="#">
+          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Perhatian & <br> 
+          Perawatan Diri</h5>
+        </a>
+      <p class="mb-2 font-normal text-gray-500 dark:text-gray-400">Akses perpustakaan meditasi dan tips perawatan diri yang dirancang dengan masukan dari para ahli di lebih dari 10+ sekolah dan universitas.</p>
+      </div>
+      <div class="max-w-64 bg-white">
+        <img src="img/icon/emoicons.png" alt="AI" class="w-16 h-16 mb-10">
+        <a href="#">
+          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Pemeriksaan Emosi 
+            Secara Real-Time</h5>
+        </a>
+      <p class="mb-2 font-normal text-gray-500 dark:text-gray-400">Lebih dari 1.000 check-in harian telah membantu pengguna mengekspresikan perasaan mereka dan mendapatkan wawasan yang berharga.</p>
+      </div>
+      <div class="max-w-64 bg-white">
+        <img src="img/icon/lockicons.png" alt="AI" class="w-16 h-16 mb-10">
+        <a href="#">
+          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Aman & Rahasia</h5>
+        </a>
+      <p class="mb-2 font-normal text-gray-500 dark:text-gray-400">Bermitra dengan institusi terpercaya, privasi dan kesejahteraan Anda adalah prioritas utama kami.</p>
+      </div>
+      </div>
+    </section>
+    <section class="w-svw h-svh flex p-10">
+      <div class="w-full flex justify-center items-center">
+        <img src="img/zoom.png" alt="zoom">
+      </div>
+      <div class="w-full p-7 pl-0">
+        <div class="w-10/12 mt-10">
+          <h3 class="text-2xl font-montserrat font-semibold mb-16">Tentang Kami</h3>
+          <h1 class="text-4xl font-roboto font-extrabold mb-14">Kami Menangani Aspek Layanan Kesehatan Profesional </h1>
+          <p class="text-xl font-montserrat">Dengan 2 ribu tenaga profesional yang kami miliki serta bekerja sama dengan 14 sekolah, rumah sakit pemerintahan dan rumah sakit swasta yang terpercaya. Kami akan menjamin masalah kesehatan Anda dapat tertangani dengan cepat dan tepat.</p>
+          <div class="mt-10 flex">
+            <div class="max-w-56 p-6 pb-20 ">
+              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight text-gray-900">4.798</h5>
+              <p class="mb-3 font-montserrat text-gray-500">Siswa yang cerita di Daijoubu</p>
+            </div>
+            <div class="max-w-56 p-6 pb-20 ">
+              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight text-gray-900">14</h5>
+              <p class="mb-3 font-montserrat text-gray-500">Sekolah yang sudah berkolaborasi</p>
+            </div>
+            <div class="max-w-56 p-6 pb-20 ">
+              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight text-gray-900">2000</h5>
+              <p class="mb-3 font-montserrat text-gray-500">Tenaga Profesional yang terdiri dari Guru BP/BK, dan Psikolog</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/script.js"></script>
   </body>
 </html>
