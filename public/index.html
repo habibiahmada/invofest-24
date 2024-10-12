@@ -3,249 +3,520 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>daijoubou</title>
+    <title>Daijoubu</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/icon/dai-icons.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icon/dai-icons.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </script>
+<script>
+  AOS.init();
+</script>
+
   </head>
   <body class="overflow-x-hidden">
     <!-- navbar start -->
-<nav class="bg-white w-svw h-auto z-50 sticky top-0">
-  <div class="max-w-screen-xl flex flex-wrap justify-between mx-auto p-4">
-    <a href="#" class="ring-0 flex items-center">
-      <img src="./img/daijoubu.png" class="w-28 scale-125" alt="Daijoubou Logo" />
-    </a>
-    <button
-      data-collapse-toggle="navbar-dropdown"
-      type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      aria-controls="navbar-dropdown"
-      aria-expanded="false"
-    >
-      <span class="sr-only">Open main menu</span>
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 17 14"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15"
-        />
-      </svg>
-    </button>
-    <div class="hidden md:relative top-14 md:top-0 bg-blue-300 md:bg-transparent rounded-lg my-auto w-full md:block md:w-auto" id="navbar-dropdown">
-      <ul
-        class="absolute  bg-blue-pallet-50 md:bg-transparent w-[90vw] md:w-auto md:static flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
-      >
-        <li>
-          <a
-            href="#beranda"
-            class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 group"
-          >
-            <span
-              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
-            >
-              Beranda
-            </span>
-            <span
-              class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
-            ></span>
+    <nav class="bg-white w-full h-16 z-50 fixed top-0">
+      <div class="max-w-screen-xl flex flex-wrap justify-between mx-auto p-4">
+          <a href="#" class="flex items-center">
+              <img src="./img/daijoubu.png" class="w-28 scale-125 mr-4" alt="Daijoubou Logo" />
           </a>
-        </li>
-        <li>
-          <a
-            id="dropdownNavbarLink"
-            data-dropdown-toggle="dropdownNavbar"
-            class="relative flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto group"
+          <button
+              data-collapse-toggle="navbar-dropdown"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-dropdown"
+              aria-expanded="false"
           >
-            <span
-              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
-            >
-              Artikel
-            </span>
-            <svg
-              id="arrowIcon"
-              class="w-2.5 h-2.5 ms-2.5 transition-transform duration-300 ease-in-out"
-              onclick="rotateArrow()"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 4 4 4-4"
-              />
-            </svg>
-            <span
-              class="absolute  bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
-            ></span>
-          </a>
-
-          <!-- Dropdown menu -->
-          <div
-            id="dropdownNavbar"            
-            class="z-[1000] hidden font-normal bg-white  md:bg-blue-pallet-200 divide-y divide-gray-100 rounded-lg shadow w-44"
-          >
-            <ul
-              class="py-2 text-sm text-gray-700"
-              aria-labelledby="dropdownLargeButton"
-            >
-              <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 font-montserrat"
-                  >Kesehatan Mental</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 font-montserrat"
-                  >Kesehatan Fisik</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 font-montserrat"
-                  >HKSR</a
-                >
-              </li>
-            </ul>
+              <span class="sr-only">Open main menu</span>
+              <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 14"
+              >
+                  <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 1h15M1 7h15M1 13h15"
+                  />
+              </svg>
+          </button>
+          <div class="hidden md:relative bg-blue-300 md:bg-transparent rounded-lg my-auto w-full md:block md:w-auto" id="navbar-dropdown">
+              <ul class="absolute bg-blue-pallet-50 md:bg-transparent w-[90vw] md:w-auto md:static flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                  <li>
+                      <a
+                          href="#beranda"
+                          class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 group"
+                      >
+                          <span class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat">
+                              Beranda
+                          </span>
+                          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a
+                          id="dropdownNavbarLink"
+                          data-dropdown-toggle="dropdownNavbar"
+                          class="relative flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto group"
+                      >
+                          <span class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat">
+                              Artikel
+                          </span>
+                          <svg
+                              id="arrowIcon"
+                              class="w-2.5 h-2.5 ms-2.5 transition-transform duration-300 ease-in-out"
+                              onclick="rotateArrow()"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 10 6"
+                          >
+                              <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m1 1 4 4 4-4"
+                              />
+                          </svg>
+                          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"></span>
+                      </a>
+  
+                      <!-- Dropdown menu -->
+                      <div
+                          id="dropdownNavbar"
+                          class="z-[1000] hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+                      >
+                          <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                              <li>
+                                  <a href="#Artikel" class="block px-4 py-2 hover:bg-gray-100 font-montserrat">Sex Education</a>
+                              </li>
+                              <li>
+                                  <a href="#Artikel" class="block px-4 py-2 hover:bg-gray-100 font-montserrat">Mental Health</a>
+                              </li>
+                              <li>
+                                  <a href="#Artikel" class="block px-4 py-2 hover:bg-gray-100 font-montserrat">HKSR</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li>
+                      <a
+                          href="#ruang-cerita"
+                          class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 group"
+                      >
+                          <span class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat">
+                              Ruang Cerita
+                          </span>
+                          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a
+                          href="#tentang-kami"
+                          class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 group"
+                      >
+                          <span class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"">
+                              Tentang Kami
+                          </span>
+                          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"></span>
+                      </a>
+                  </li>
+              </ul>
           </div>
-        </li>
-        <li>
-          <a
-            href="#ruangCerita"
-            class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 group"
+          <div
+              class="button bg-blue-pallet-600 cursor-pointer rounded-md py-2 hidden md:block hover:shadow-lg hover:shadow-blue-pallet-900/50 transition-all duration-200 hover:scale-105"
           >
-            <span
-              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
-            >
-              Ruang Cerita
-            </span>
-            <span
-              class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
-            ></span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="#tentangKami"
-            class="block relative py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 group"
-          >
-            <span
-              class="group-hover:-translate-y-1 transition-transform duration-300 ease-in-out inline-block font-montserrat"
-            >
-              Tentang Kami
-            </span>
-            <span
-              class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-pallet-900 w-0 h-[2px] group-hover:w-full transition-all duration-500 ease-in-out rounded"
-            ></span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      class="button bg-blue-pallet-600 cursor-pointer rounded-md py-2 hidden md:block hover:shadow-lg hover:shadow-blue-pallet-900/50 transition-all duration-200 hover:scale-105"
-    >
-      <a href="#" class="text-white m-5">Masuk</a>
-    </div>
-  </div>
-</nav>
+              <a href="#" class="text-white m-5">Masuk</a>
+          </div>
+      </div>
+  </nav>
+  
 <!-- navbar end -->
-    <section id="beranda" class="relative w-svw h-svh mt-0 scroll-mt-20">
-      <img src="img/banner.png" class="absolute -z-10 w-full h-svh object-cover" alt="banner">
-      <div class="container absolute xl:m-[10%] xl:ml-[15%]">
-        <div>
-          <h1 class="text-white text-5xl font-roboto font-bold xl:text-[64px] ml-4 xl:w-[50%] capitalize">Solusi Kesehatan <br> Masa Depan</h1>
-          <p class="text-white xl:text-[20px] ml-4 xl:mt-12 xl:w-[40%] capitalize font-montserrat"><span class="font-bold">Daijoubu</span> hadir dengan teknologi AI canggih untuk memberikan bantuan personal pada kesehatanmu.</p>
-          <button class="bg-blue-pallet-600 p-4 rounded-md mt-12 ml-4 text-white hover:scale-105 transition-all duration-300">Konsultasi sekarang</button>
-        </div>
+    <section id="beranda" class="relative w-svw h-svh scroll-mt-20">
+            <img src="img/banner.png" class="absolute -z-10 w-full h-screen object-cover" alt="banner" />
+      <div class="absolute w-full h-full bg-gradient-to-r from-black/20 to-black/0 flex justify-center items-center pt-16">
+        <div class="w-full max-w-4xl py-10 flex flex-col items-start text-left px-4">
+          <h1 class="font-roboto text-white text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide">
+            Solusi Kesehatan <br class="pt-2" /> Masa Depan
+          </h1>
+          <h3 class="text-white font-montserrat text-xl mt-6 w-full md:w-3/4 lg:w-1/2">
+            <span class="font-bold">Daijoubu</span> hadir dengan teknologi AI canggih <br>
+            untuk memberikan bantuan personal pada kesehatanmu.
+          </h3>
+          <!-- Trigger for the modal -->
+<a href="#" 
+id="openKonsultasiModal"
+class="bg-blue-pallet-600 rounded-lg w-48 h-12 mt-10 flex items-center justify-center hover:bg-blue-pallet-700 hover:scale-105 transition-all duration-200 hover:shadow-md cursor-pointer">
+ <p class="text-white font-montserrat">Konsultasi Sekarang</p>
+</a>
+<!-- Modal -->
+<div id="konsultasiModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full">
+      <h5 class="text-lg font-bold text-center mb-4">Apakah sudah siap bercerita?</h5>
+      <div class="flex justify-center space-x-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" id="yesKonsultasiButton">
+              Ya
+          </button>
+          <button class="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400 focus:outline-none" id="noKonsultasiButton">
+              Tidak
+          </button>
+      </div>
+  </div>
+</div>
+
+<!-- Tailwind CSS and Alpine.js -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    // Modal for Konsultasi
+    document.getElementById('openKonsultasiModal').onclick = function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        document.getElementById('konsultasiModal').classList.remove('hidden'); // Show modal
+    };
+
+    document.getElementById('noKonsultasiButton').onclick = function() {
+        document.getElementById('konsultasiModal').classList.add('hidden'); // Hide modal
+    };
+
+    document.getElementById('yesKonsultasiButton').onclick = function() {
+        alert("Great! Let's proceed to the consultation!"); // Action for "Yes"
+        document.getElementById('konsultasiModal').classList.add('hidden'); // Hide modal
+    };
+</script>
         
+        </div>
       </div>
+
+
     </section>
-    <section class="w-svw h-[600px]">
-      <div class="flex justify-center mt-10 mb-16">
-        <img src="img/sponsor.png" alt="sponsor">
+    <section class="w-svw">
+      <div class="flex justify-center mt-10 mb-14 bounce">
+        <img src="img/sponsor.png" alt="sponsor" class="scale-90 transition-transform duration-300 hover:scale-100">
       </div>
-      <h1 class="justify-center mb-20 text-4xl font-roboto font-bold items-center flex">Penawaran Kami</h1>
-      <div class="flex justify-center gap-20 mt-5">
-      <div class="max-w-64 bg-white">
-        <img src="img/icon/Aicons.png" alt="AI" class="w-16 h-16 mb-10">
-        <a href="#">
-          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Cari solusi <br> dengan AI</h5>
-        </a>
-      <p class="mb-24 font-normal text-gray-500 dark:text-gray-400">Tidak ingin bercerita dengan manusia?</p>
-      </div>
-      <div class="max-w-64 bg-white">
-        <img src="img/icon/Hearticons.png" alt="AI" class="w-16 h-16 mb-10">
-        <a href="#">
-          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Perhatian & <br> 
-          Perawatan Diri</h5>
-        </a>
-      <p class="mb-2 font-normal text-gray-500 dark:text-gray-400">Akses perpustakaan meditasi dan tips perawatan diri yang dirancang dengan masukan dari para ahli di lebih dari 10+ sekolah dan universitas.</p>
-      </div>
-      <div class="max-w-64 bg-white">
-        <img src="img/icon/emoicons.png" alt="AI" class="w-16 h-16 mb-10">
-        <a href="#">
-          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Pemeriksaan Emosi 
-            Secara Real-Time</h5>
-        </a>
-      <p class="mb-2 font-normal text-gray-500 dark:text-gray-400">Lebih dari 1.000 check-in harian telah membantu pengguna mengekspresikan perasaan mereka dan mendapatkan wawasan yang berharga.</p>
-      </div>
-      <div class="max-w-64 bg-white">
-        <img src="img/icon/lockicons.png" alt="AI" class="w-16 h-16 mb-10">
-        <a href="#">
-          <h5 class="mb-7 text-2xl font-semibold tracking-tight text-gray-900">Aman & Rahasia</h5>
-        </a>
-      <p class="mb-2 font-normal text-gray-500 dark:text-gray-400">Bermitra dengan institusi terpercaya, privasi dan kesejahteraan Anda adalah prioritas utama kami.</p>
-      </div>
-      </div>
+
+      <div class="text-center mb-4">
+        <h1 class="text-4xl font-roboto font-extrabold mb-12 text-center" style="color: #2766A2;">Penawaran Kami</h1>
+
+    </div>
+   <!-- Container for the cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-5 mx-auto max-w-full">
+  <!-- Card 1 -->
+  <div class="flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow transition-transform duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+      <img src="img/icon/Aicons.png" alt="emoicons" class="w-16 mx-auto mb-4">
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-center text-custom font-montserrat" style="color: #2766A2;">
+          Cari solusi dengan AI
+      </h5>
+      <p class="mb-3 font-normal text-gray-500 dark:text-gray-400 text-center">Tidak ingin bercerita dengan manusia?</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow transition-transform duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+      <img src="img/icon/Hearticons.png" alt="Hearticons" class="w-16 mx-auto mb-4">
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-center text-custom font-montserrat" style="color: #2766A2;">Perhatian & Perawatan Diri</h5>
+      <p class="mb-3 font-normal text-gray-500 dark:text-gray-400 text-center">Akses perpustakaan meditasi dan tips perawatan diri yang dirancang dengan masukan dari para ahli di lebih dari <b>10+ sekolah dan universitas.</b></p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow transition-transform duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+      <img src="img/icon/emoicons.png" alt="emoicons" class="w-16 mx-auto mb-4">
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-center text-custom font-montserrat" style="color: #2766A2;">Pemeriksaan Emosi Secara Real-Time</h5>
+      <p class="mb-3 font-normal text-gray-500 dark:text-gray-400 text-center">Lebih dari <b>1.000 check-in harian</b> telah membantu pengguna mengekspresikan perasaan mereka dan mendapatkan wawasan yang berharga.</p>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow transition-transform duration-300 ease-in-out hover:shadow-lg hover:scale-105">
+      <img src="img/icon/lockicons.png" alt="lockicons" class="w-16 mx-auto mb-4">
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-center text-custom font-montserrat" style="color: #2766A2;">Aman & Rahasia</h5>
+      <p class="mb-3 font-normal text-gray-500 dark:text-gray-400 text-center">Bermitra dengan institusi terpercaya, privasi dan kesejahteraan Anda adalah prioritas utama kami.</p>
+  </div>
+</div>
+
+  
+            
+      
+      
     </section>
-    <section class="w-svw h-svh flex p-10">
-      <div class="w-full flex justify-center items-center">
-        <img src="img/zoom.png" alt="zoom">
+    <section id="tentang-kami" class="w-svw flex px-10 py-4 bg-gray-50">
+      <div class="w-full flex justify-center items-center my-auto">
+        <img src="img/zoom.png" alt="zoom" class="drop-shadow-2xl max-w-full h-auto">
       </div>
-      <div class="w-full p-7 pl-0">
-        <div class="w-10/12 mt-10">
-          <h3 class="text-2xl font-montserrat font-semibold mb-16">Tentang Kami</h3>
-          <h1 class="text-4xl font-roboto font-extrabold mb-14">Kami Menangani Aspek Layanan Kesehatan Profesional </h1>
-          <p class="text-xl font-montserrat">Dengan 2 ribu tenaga profesional yang kami miliki serta bekerja sama dengan 14 sekolah, rumah sakit pemerintahan dan rumah sakit swasta yang terpercaya. Kami akan menjamin masalah kesehatan Anda dapat tertangani dengan cepat dan tepat.</p>
-          <div class="mt-10 flex">
-            <div class="max-w-56 p-6 pb-20 ">
-              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight text-gray-900">4.798</h5>
+      
+      <div class="w-full p-7 flex justify-center items-center">
+        <div class="w-full max-w-6xl pt-16">
+          <h3 class="text-2xl font-montserrat mb-5 text-center" style="color: #2766A2; font-weight: 400;">Tentang Kami</h3>
+
+          <h1 class="text-4xl font-roboto font-extrabold mb-12 text-center" style="color: #2766A2;">Kami Menangani Aspek Layanan Kesehatan Profesional</h1>
+          <p class="text-xl font-montserrat text-center mb-8">
+            Dengan 2 ribu tenaga profesional yang kami miliki serta bekerja sama dengan 14 sekolah, rumah sakit pemerintahan dan rumah sakit swasta yang terpercaya. Kami akan menjamin masalah kesehatan Anda dapat tertangani dengan cepat dan tepat.
+          </p>
+      
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <!-- Card 1 -->
+            <div class="flex flex-col items-center text-center rounded-lg shadow-md p-4 w-full sm:w-64 md:w-1/3 lg:w-1/5 max-w-xs">
+              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight" style="color: #2766A2;">4.798</h5>
               <p class="mb-3 font-montserrat text-gray-500">Siswa yang cerita di Daijoubu</p>
             </div>
-            <div class="max-w-56 p-6 pb-20 ">
-              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight text-gray-900">14</h5>
+          
+            <!-- Card 2 -->
+            <div class="flex flex-col items-center text-center rounded-lg shadow-md p-4 w-full sm:w-64 md:w-1/3 lg:w-1/5 max-w-xs">
+              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight" style="color: #2766A2;">14</h5>
               <p class="mb-3 font-montserrat text-gray-500">Sekolah yang sudah berkolaborasi</p>
             </div>
-            <div class="max-w-56 p-6 pb-20 ">
-              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight text-gray-900">2000</h5>
+          
+            <!-- Card 3 -->
+            <div class="flex flex-col items-center text-center rounded-lg shadow-md p-4 w-full sm:w-64 md:w-1/3 lg:w-1/5 max-w-xs">
+              <h5 class="mb-2 text-2xl font-roboto font-semibold tracking-tight" style="color: #2766A2;">2000</h5>
               <p class="mb-3 font-montserrat text-gray-500">Tenaga Profesional yang terdiri dari Guru BP/BK, dan Psikolog</p>
             </div>
           </div>
+          
+        
+        
+          
+          
         </div>
       </div>
+      
     </section>
+    <section id="ruang-cerita" class="w-svw flex px-10 py-4 bg-gray-50">
+      <div class="w-full p-7 flex justify-center items-center">
+        <div class="w-full max-w-6xl pt-16">
+          <h3 class="text-2xl font-montserrat mb-5 text-center" style="color: #4A90E2; font-weight: 400;">
+            Ruang Cerita
+          </h3>
+    
+          <h1 class="text-4xl font-roboto font-extrabold mb-12 text-center text-animate" style="color: #4A90E2;">
+            Curhat Bebas, Temukan Kedamaian dan Kenali Dirimu Lebih Dalam
+        </h1>
+        
+          <p class="text-xl font-montserrat text-justify mb-8 text-animate">
+            Ruang Cerita di Daijoubu adalah fitur yang dirancang untuk memberikan Anda tempat aman dan nyaman dalam mengekspresikan perasaan. Di sini, Anda bisa curhat kapan saja dengan AI yang responsif, berkonsultasi langsung dengan psikolog berlisensi untuk mendapatkan bimbingan profesional, atau menulis catatan pribadi sebagai bentuk refleksi diri. Semua ini membantu Anda menjaga kesehatan mental dengan cara yang praktis, mudah diakses, dan sepenuhnya privat.
+          </p>
+          <br>
+          <a href="#" class="klik-disini text-blue-600 font-montserrat hover:underline" id="openModal">
+            Klik Disini
+          </a>
+        </div>
+      </div>
+      <div class="w-full flex justify-center items-center my-auto">
+        <img src="img/ruangcrt.png" alt="zoom" class="drop-shadow-2xl max-w-full h-auto image-animate">
+      </div>
+    </section>
+    
+    <section id="Artikel" class="w-svw pb-10 px-[9%]">
+      <div class="w-full mt-2">
+        <h1 class="font-roboto font-bold text-2xl mb-4" style="color: #2766A2;">Artikel Menarik</h1>
+
+
+
+        <div class="flex flex-wrap mt-1 justify-start space-x-4 p-4"> <!-- Added padding (p-4) for spacing between container and buttons -->
+          <div class="flex flex-wrap mt-1 justify-start space-x-4"> <!-- Added space-x-4 for horizontal spacing -->
+            <div class="flex flex-wrap mt-1 justify-start space-x-2"> <!-- Adjusted space for smaller buttons -->
+              <button type="button" class="text-white bg-custom-blue focus:ring-4 focus:ring-blue-pallet-300 font-montserrat rounded-lg text-sm px-4 py-2 mb-4 transition-all duration-300 ease-in-out hover:bg-blue-pallet-800 hover:shadow-lg focus:outline-none">Sex Education</button>
+              
+              <button type="button" class="bg-white focus:ring-4 focus:ring-blue-pallet-300 font-montserrat rounded-lg text-sm px-4 py-2 mb-4 border border-blue-pallet-700 transition-all duration-300 ease-in-out hover:bg-blue-pallet-700 hover:text-white hover:shadow-lg focus:outline-none">Mental Health</button> <!-- Changed to rounded-lg -->
+              
+              <button type="button" class="bg-white focus:ring-4 focus:ring-blue-pallet-300 font-montserrat rounded-lg text-sm px-4 py-2 mb-4 border border-blue-pallet-700 transition-all duration-300 ease-in-out hover:bg-blue-pallet-700 hover:text-white hover:shadow-lg focus:outline-none">HKSR</button> <!-- Changed to rounded-lg -->
+            </div>
+          </div>
+        </div>
+        
+        
+        
+    <div class="flex overflow-x-auto gap-4 pt-3 place-items-center">
+      <div class="w-[250px] flex-shrink-0 relative pb-3">
+        <img class="w-full rounded-[20px]" src="img/card/se-pubertas.png" alt="Be-card"/>
+        <div class="py-4">
+          <h5 class="mb-2 font-montserrat text-[110%] font-semibold text-blue-pallet-950">Bun, pubertas itu apa?</h5>
+          <button type="button" class="text-white bg-custom-blue focus:ring-4 focus:ring-blue-pallet-300 font-montserrat rounded-lg text-sm px-4 py-2 mb-4 transition-all duration-300 ease-in-out hover:bg-blue-pallet-800 hover:shadow-lg focus:outline-none">Sex Education</button>
+
+          <p class="mb-3 text-[75%]">Pubertas adalah fase pertumbuhan di mana akhirnya anak mengalami ataupun mencapai kematangan reproduksinya. Pada masa pubertas, sistem tubuh lain juga matang selama periode ini.</p><br>
+          <a href="https://www.halodoc.com/kesehatan/pubertas" class="absolute bottom-2 underline text-blue-pallet-400 text-[75%]">Baca Selengkapnya</a>
+        </div>
+      </div>
+    
+      <div class="w-[250px] flex-shrink-0 relative pb-3">
+        <img class="rounded-[20px]" src="img/card/pu-art.png" alt="Be-card" class="w-full"/>
+        <div class="py-4">
+          <h5 class="mb-2 font-montserrat text-[110%] font-semibold text-blue-pallet-950">Kenapa badanku berubah?</h5>
+          <button type="button" class="text-white bg-custom-blue focus:ring-4 focus:ring-blue-pallet-300 font-montserrat rounded-lg text-sm px-4 py-2 mb-4 transition-all duration-300 ease-in-out hover:bg-blue-pallet-800 hover:shadow-lg focus:outline-none">Sex Education</button>
+          <!-- Changed to rounded-lg -->
+          <p class="mb-3 text-[75%]">Pubertas merupakan suatu tahap perkembangan seorang anak menjadi dewasa secara seksual. Pada perempuan, pubertas terjadi pada rentang usia 10−14 tahun. Sementara pada laki-laki.</p><br>
+          <a href="https://www.alodokter.com/pubertas-mengubah-tubuhku" class="absolute bottom-2 underline text-blue-pallet-400 text-[75%]">Baca Selengkapnya</a>
+        </div>
+      </div>
+    
+      <div class="w-[250px] flex-shrink-0 relative pb-3">
+        <img class="rounded-[20px]" src="img/card/be-art.png" alt="Be-card" class="w-full"/>
+        <div class="py-4">
+          <h5 class="mb-2 font-montserrat text-[110%] font-semibold text-blue-pallet-950">Mengapa aku berbeda?</h5>
+          <button type="button" class="text-white bg-custom-blue focus:ring-4 focus:ring-blue-pallet-300 font-montserrat rounded-lg text-sm px-4 py-2 mb-4 transition-all duration-300 ease-in-out hover:bg-blue-pallet-800 hover:shadow-lg focus:outline-none">Sex Education</button>
+          <!-- Changed to rounded-lg -->
+          <p class="mb-3 text-[75%]">Pubertas dini adalah perubahan tubuh anak menjadi dewasa di usia yang lebih awal dari seharusnya. Anak perempuan dianggap mengalami pubertas dini ketika pubertas terjadi </p><br>
+          <a href="https://www.alodokter.com/pubertas-dini " class="absolute bottom-2 underline text-blue-pallet-400 text-[75%]">Baca Selengkapnya</a>
+        </div>
+      </div>
+    
+      <div class="w-[250px] flex-shrink-0 relative pb-3">
+        <img class="rounded-[20px]" src="img/card/me-art.png" alt="Be-card" class="w-full"/>
+        <div class="py-4">
+          <h5 class="mb-2 font-montserrat text-[110%] font-semibold text-blue-pallet-950">Bun, pubertas itu apa?</h5>
+          <button type="button" class="text-white bg-custom-blue focus:ring-4 focus:ring-blue-pallet-300 font-montserrat rounded-lg text-sm px-4 py-2 mb-4 transition-all duration-300 ease-in-out hover:bg-blue-pallet-800 hover:shadow-lg focus:outline-none">Sex Education</button>
+<!-- Changed to rounded-lg -->
+          <p class="mb-3 text-[75%]">Pubertas adalah fase pertumbuhan di mana akhirnya anak mengalami ataupun mencapai kematangan reproduksinya. Pada masa pubertas, sistem tubuh lain juga matang selama periode ini.
+          </p><br>
+          <a href="https://www.halodoc.com/kesehatan/pubertas?srsltid=AfmBOopvvYQpt_w40HRXIbp4Ly1dt-Qxr4GLT6eI834pT-uf82c_916e" class="absolute bottom-2 underline text-blue-pallet-400 text-[75%]">Baca Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+    
+        
+    
+    </section>
+    
+    <section class="w-svw h-[70vh] bg-blue-pallet-50 mt-10 mb-8">
+      <div class="flex justify-center items-center pt-5">
+          <h1 class="font-roboto text-2xl font-extrabold text-center" style="color: #2766A2;">Kata Mereka</h1>
+      </div>
+      
+      <div class="mt-8">
+          <!-- Content below the header -->
+      </div>
+  
+      <div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-3">
+          <div class="w-full md:w-[20%] bg-blue-pallet-200 rounded-3xl flex p-5 transition-transform transform hover:scale-105 hover:shadow-lg">
+              <div class="pr-5">
+                  <img src="img/icon/profil.png" alt="profile" class="w-20">
+              </div>
+              <div>
+                  <p>"Bikin lega banget!"
+                      Baru pertama kali coba, tapi langsung ngerasa jauh lebih tenang setelah curhat di Daijoubu. Thanks Daijoubu, kalian terbaik! 🌟
+                  </p>
+                  <div class="flex items-center mt-2.5 mb-5">
+                      <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                          <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                          </svg>
+                          <!-- Repeat the SVG star rating as needed -->
+                      </div>
+                  </div>
+                  <p>Anonymous</p>
+              </div>
+          </div>
+          
+          <div class="w-full md:w-[20%] bg-blue-pallet-200 rounded-3xl flex p-5 transition-transform transform hover:scale-105 hover:shadow-lg">
+              <div class="pr-5">
+                  <img src="img/icon/profil.png" alt="profile" class="w-20">
+              </div>
+              <div>
+                  <p>"Gak ngerasa sendiri lagi!"
+                      Daijoubu bikin aku bebas cerita dan ngerasa dimengerti. Terima kasih Daijoubu! 🌈
+                  </p>
+                  <div class="flex items-center mt-2.5 mb-5">
+                      <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                          <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                          </svg>
+                          <!-- Repeat the SVG star rating as needed -->
+                      </div>
+                  </div>
+                  <p>Anonymous</p>
+              </div>
+          </div>
+  
+          <div class="w-full md:w-[20%] bg-blue-pallet-200 rounded-3xl flex p-5 transition-transform transform hover:scale-105 hover:shadow-lg">
+              <div class="pr-5">
+                  <img src="img/icon/profil.png" alt="profile" class="w-20">
+              </div>
+              <div>
+                  <p>"Lifesaver banget!"
+                      Curhat di sini bikin lega tanpa takut di-judge. Makasih Daijoubu, kalian keren! 🙌💖
+                  </p>
+                  <div class="flex items-center mt-2.5 mb-5">
+                      <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                          <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                          </svg>
+                          <!-- Repeat the SVG star rating as needed -->
+                      </div>
+                  </div>
+                  <p>Anonymous</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <footer class="bg-blue-pallet-400 p-4 mt-10">
+    <div class="mx-auto w-full max-w-screen-xl p-4 lg:p-6">
+      <div class="flex flex-col items-center md:flex-row md:justify-between">
+        <div class="mb-6 md:mb-0">
+          <a href="#" class="flex items-center justify-center">
+            <img src="img/icon/dai-icons.png" alt="Daijoubu Logo" class="h-16 w-auto max-w-full" />
+          </a>
+        </div>
+        <div class="flex flex-wrap justify-center md:justify-between w-full space-x-0 md:space-x-8 text-center">
+          <div class="flex-1 min-w-[150px] mb-4 md:mb-0">
+            <h2 class="mb-4 text-sm font-semibold font-roboto text-white uppercase">Navigasi</h2>
+            <ul class="text-white font-medium font-montserrat">
+              <li class="mb-2"><a href="#" class="hover:underline">Halaman Utama</a></li>
+              <li class="mb-2"><a href="#" class="hover:underline">Layanan Utama</a></li>
+              <li><a href="#" class="hover:underline">Sumber Informasi</a></li>
+            </ul>
+          </div>
+          <div class="flex-1 min-w-[150px] mb-4 md:mb-0">
+            <h2 class="mb-4 text-sm font-semibold font-roboto text-white uppercase">Tentang</h2>
+            <ul class="text-white font-medium font-montserrat">
+              <li class="mb-2"><a href="#" class="hover:underline">Email</a></li>
+              <li class="mb-2"><a href="#" class="hover:underline">Alamat</a></li>
+              <li><a href="#" class="hover:underline">Nomor Telepon</a></li>
+            </ul>
+          </div>
+          <div class="flex-1 min-w-[150px] mb-4 md:mb-0">
+            <h2 class="mb-4 text-sm font-semibold font-roboto text-white uppercase">Kontak</h2>
+            <ul class="text-white font-montserrat font-medium">
+              <li class="mb-2"><a href="#" class="hover:underline">Karir</a></li>
+              <li class="mb-2"><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+              <li><a href="#" class="hover:underline">Sumber Informasi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row justify-between items-center px-4 py-4 sm:px-8 sm:py-6">
+      <p class="text-center sm:text-left text-white font-montserrat">
+        &copy; 2024 Your Company. All rights reserved.
+      </p>
+      <div class="flex space-x-4 mt-2 sm:mt-0">
+        <a href="#" class="text-white hover:text-gray-400">
+          <!-- Social Media Icons -->
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+  
+    
     <script src="js/script.js"></script>
   </body>
 </html>
